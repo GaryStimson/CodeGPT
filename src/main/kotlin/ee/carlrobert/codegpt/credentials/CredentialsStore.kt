@@ -15,7 +15,7 @@ object CredentialsStore {
         credentialsMap.getOrPut(key) {
             PasswordSafe.instance.getPassword(
                 CredentialAttributes(
-                    generateServiceName("CodeGPT", key.name)
+                    generateServiceName("GizmoGPT", key.name)
                 )
             ) ?: ""
         }.takeIf { !it.isNullOrEmpty() }
@@ -26,7 +26,7 @@ object CredentialsStore {
 
         if (prevPassword != password) {
             val credentialAttributes =
-                CredentialAttributes(generateServiceName("CodeGPT", key.name))
+                CredentialAttributes(generateServiceName("GizmoGPT", key.name))
             PasswordSafe.instance.setPassword(credentialAttributes, password)
         }
     }

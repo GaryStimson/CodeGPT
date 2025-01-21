@@ -106,7 +106,7 @@ enum class CustomServiceChatCompletionTemplate(
             mapOf(
                 "Authorization" to "Bearer \$CUSTOM_SERVICE_API_KEY",
                 "HTTP-Referer" to "https://plugins.jetbrains.com/plugin/21056-codegpt",
-                "X-Title" to "CodeGPT"
+                "X-Title" to "GizmoGPT"
             )
         ),
         getDefaultBodyParams(

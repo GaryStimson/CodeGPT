@@ -26,7 +26,7 @@ public final class CodeGPTPlugin {
   }
 
   public static @NotNull String getPluginOptionsPath() {
-    return PathManager.getOptionsPath() + File.separator + "CodeGPT";
+    return PathManager.getOptionsPath() + File.separator + "GizmoGPT";
   }
 
   public static @NotNull String getIndexStorePath() {

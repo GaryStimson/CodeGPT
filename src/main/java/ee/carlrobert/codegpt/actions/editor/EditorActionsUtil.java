@@ -42,7 +42,7 @@ public class EditorActionsUtil {
 
   public static void refreshActions() {
     AnAction actionGroup =
-        ActionManager.getInstance().getAction("CodeGPT.MyEditorActionsGroup");
+        ActionManager.getInstance().getAction("GizmoGPT.MyEditorActionsGroup");
     if (actionGroup instanceof DefaultActionGroup group) {
       group.removeAll();
       ApplicationManager.getApplication().getService(PromptsSettings.class)

@@ -8,7 +8,7 @@ class DocumentationsConfigurable : Configurable {
     private lateinit var component: DocumentationsSettingsForm
 
     override fun getDisplayName(): String {
-        return "CodeGPT: Documentations"
+        return "GizmoGPT: Documentations"
     }
 
     override fun createComponent(): JComponent {

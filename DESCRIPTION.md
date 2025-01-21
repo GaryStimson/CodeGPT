@@ -1,36 +1,17 @@
 <!-- Plugin description -->
 
-CodeGPT is an AI-powered code assistant designed to help you with various programming activities.
-It's a powerful alternative to GitHub Copilot, AI Assistant, Codiumate, and other JetBrains plugins.
+GizmoGPT is fork of CodeGPT an AI-powered code assistant designed to help you with various programming activities and Labvantage knowledgebase.
 
-## Code Assistant <sup><small>(new)</small></sup>
+## Code Assistant <sup><small>(new)</small></supz>
 
 Get multi-line edits based on your recent activity, open files and previous chat interactions.
 
-CodeGPT is the first JetBrains extension capable of suggesting modifications beyond the
+GizmoGPT is the first JetBrains extension capable of suggesting modifications beyond the
 current cursor location.
-
-Learn more in our recent [blog post](https://codegpt.ee/blog/introducing-code-assistant).
-
-## Highly Configurable
-
-Access top-tier language models (LLMs) with your own API key or use privately hosted models within your corporate network.
-
-- **Cloud Providers & Custom Setups:** Integrate top-tier models from OpenAI, Anthropic, Azure, Mistral, or use self-hosted models for offline use.
-- **Bring Your Own Key:** Connect with your preferred provider using your API key.
-- **Custom Setup:** Integrate privately hosted models with OpenAI API-compatible configuration.
-
-## Build Your Own Local AI Assistant
-
-CodeGPT is the leading open-source extension for connecting your locally running LLM with JetBrains IDEs. Enjoy full AI assistance without sending data externally or needing an internet connection.
-
-- **Ollama Integration:** Automatically detect and utilize Ollama-managed models.
-- **GGUF Support:** Easily connect custom models.
-- **LLaMA C/C++ Integration:** Run various open-source LLMs without third-party software.
 
 ## Core Features
 
-CodeGPT offers a wide range of features to enhance your development experience:
+GizmoGPT offers a wide range of features to enhance your development experience:
 
 ### Chat
 
@@ -45,7 +26,7 @@ approve or reject them with a single click.
 
 **Use images**
 
-Chat with your images. Upload manually or let CodeGPT auto-detect your screenshots.
+Chat with your images. Upload manually or let GizmoGPT auto-detect your screenshots.
 
 ![Use images](https://www.codegpt.ee/images/features/use-images-w800.png)
 
@@ -65,20 +46,15 @@ Easily pull in relevant web documentation into your chat for quick reference—w
 
 **Search the web**
 
-Connect your favourite LLM to the web. CodeGPT will search for the most relevant information to answer your questions.
+Connect your favourite LLM to the web. GizmoGPT will search for the most relevant information to answer your questions.
 
 ![Web search](https://www.codegpt.ee/images/features/web-search-w800.png)
 
-**Customize your assistant**
-
-Choose between multiple different personas for your specific needs, whether you're looking to learn, write or proofread. 
-
-![Customize your assistant](https://www.codegpt.ee/images/features/persona-suggestions-w800.png)
 
 ### Code
 
 Get helpful code completions as you type, edit your code using natural language, create clear and
-concise commit messages automatically, and more. CodeGPT equips you with cutting-edge tools to
+concise commit messages automatically, and more. GizmoGPT equips you with cutting-edge tools to
 streamline your workflow.
 
 **Code Assistant <sup><small>(new)</small></sup>**
@@ -95,7 +71,7 @@ Receive single-line or whole-function autocomplete suggestions as you type.
 
 **Edit code in natural language**
 
-Highlight the code you want to modify, describe the desired changes, and watch CodeGPT work its magic.
+Highlight the code you want to modify, describe the desired changes, and watch GizmoGPT work its magic.
 
 ![Edit code](https://www.codegpt.ee/images/features/edit-code-w800.png)
 
@@ -111,27 +87,10 @@ Generate concise and descriptive commit messages based on the changes made in yo
 
 ![Generate commit messages](https://www.codegpt.ee/images/features/generate-commit-message-w800.png)
 
-**Offline Development Support (llama.cpp and Ollama)**
-
-Integrate local open-source language models into your coding environment and enjoy a full experience without sending your data anywhere or needing an internet connection.
-
-![Offline Development Support](https://github.com/carlrobertoh/CodeGPT-docs/blob/main/images/plugin-description/old/llama-settings-resized.png?raw=true)
-
-## Privacy
-
-**Your data stays yours.** CodeGPT **does not** collect or store any sensitive information. With users' consent, we collect anonymous usage data to understand how users interact with the extension, including the most-used features and preferred providers.
 
 ## License
 
-CodeGPT's code is open source under the Apache License 2.0.
+GizmoGPT is a fork of CodeGPT. CodeGPT's code is open source under the Apache License 2.0.
 
-## Feedback
-
-Your input helps us grow. Reach out through:
-
-- [Homepage](https://codegpt.ee)
-- [Issue Tracker](https://github.com/carlrobertoh/CodeGPT/issues)
-- [Discord](https://discord.gg/8dTGGrwcnR)
-- [Email](mailto:carlrobertoh@gmail.com)
 
 <!-- Plugin description end -->

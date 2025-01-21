@@ -15,7 +15,7 @@ class CodeGPTServiceConfigurable : Configurable {
     private lateinit var component: CodeGPTServiceForm
 
     override fun getDisplayName(): String {
-        return "CodeGPT: CodeGPT Service"
+        return "GizmoGPT: GizmoGPT Service"
     }
 
     override fun createComponent(): JComponent {
