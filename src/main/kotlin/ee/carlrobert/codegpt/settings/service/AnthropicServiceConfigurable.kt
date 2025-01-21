@@ -15,7 +15,7 @@ class AnthropicServiceConfigurable : Configurable {
     private lateinit var component: AnthropicSettingsForm
 
     override fun getDisplayName(): String {
-        return "CodeGPT: Anthropic Service"
+        return "GizmoGPT: Anthropic Service"
     }
 
     override fun createComponent(): JComponent {
