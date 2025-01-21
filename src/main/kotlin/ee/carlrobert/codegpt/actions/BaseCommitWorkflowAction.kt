@@ -148,8 +148,8 @@ class CommitMessageEventListener(
     override fun onError(error: ErrorDetails, ex: Throwable) {
         Notifications.Bus.notify(
             Notification(
-                "CodeGPT Notification Group",
-                "CodeGPT",
+                "GizmoGPT Notification Group",
+                "GizmoGPT",
                 error.message,
                 NotificationType.ERROR
             )
