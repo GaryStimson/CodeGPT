@@ -7,7 +7,7 @@ import com.intellij.openapi.wm.ex.ToolWindowManagerListener
 class ChatToolWindowListener : ToolWindowManagerListener {
 
     override fun toolWindowShown(toolWindow: ToolWindow) {
-        if ("CodeGPT" == toolWindow.id) {
+        if ("GizmoGPT" == toolWindow.id) {
             requestFocusForTextArea(toolWindow.project)
         }
     }

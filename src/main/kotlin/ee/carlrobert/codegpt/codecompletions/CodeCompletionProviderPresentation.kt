@@ -22,7 +22,7 @@ class CodeCompletionProviderPresentation : InlineCompletionProviderPresentation 
                 append("Accept Line: (<strong>${getShortcutText(AcceptNextLineInlayAction.ID)}</strong>)</html>")
             }
         } else {
-            "CodeGPT"
+            "GizmoGPT"
         }
 
         return JBLabel(text, Icons.DefaultSmall, SwingConstants.LEADING)
