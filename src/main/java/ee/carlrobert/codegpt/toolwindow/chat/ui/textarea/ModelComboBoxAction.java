@@ -114,7 +114,7 @@ public class ModelComboBoxAction extends ComboBoxAction {
     var actionGroup = new DefaultActionGroup();
 
     if (availableProviders.contains(CODEGPT)) {
-      actionGroup.addSeparator("CodeGPT");
+      actionGroup.addSeparator("GizmoGPT");
       actionGroup.addAll(getCodeGPTModelActions(project, presentation));
       actionGroup.addSeparator();
     }

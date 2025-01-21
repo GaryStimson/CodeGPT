@@ -10,7 +10,7 @@ class PromptsConfigurable : Configurable {
     private lateinit var component: PromptsForm
 
     override fun getDisplayName(): String {
-        return "CodeGPT: Prompts"
+        return "GizmoGPT: Prompts"
     }
 
     override fun createComponent(): JComponent {

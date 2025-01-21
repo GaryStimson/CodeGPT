@@ -99,7 +99,7 @@ class DefaultItemRenderer(textPane: PromptTextField) : BaseItemRenderer(textPane
             value.icon ?: EMPTY_ICON,
             getTitle(value),
             getDescription(value),
-            if (value.enabled) null else "This action can only be used with CodeGPT provider"
+            if (value.enabled) null else "This action can only be used with GizmoGPT provider"
         ).apply {
             isEnabled = value.enabled
         }

@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>ee.carlrobert.chatgpt</id>
-    <name>CodeGPT</name>
-    <vendor email="carlrobertoh@gmail.com" url="https://carlrobert.ee">Carl-Robert Linnupuu</vendor>
+    <name>GizmoGPT</name>
+    <vendor email="gstimson@labvantage.com" url="https://labvantage.com">Gary Stimson</vendor>
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.lang</depends>
     <depends optional="true" config-file="plugin-java.xml">com.intellij.modules.java</depends>
@@ -26,11 +26,11 @@
     <extensions defaultExtensionNs="com.intellij">
         <postStartupActivity implementation="ee.carlrobert.codegpt.CodeGPTProjectActivity"/>
         <postStartupActivity implementation="ee.carlrobert.codegpt.CodeGPTUpdateActivity"/>
-        <applicationConfigurable id="settings.codegpt" parentId="tools" displayName="CodeGPT"
+        <applicationConfigurable id="settings.codegpt" parentId="tools" displayName="GizmoGPT"
             instance="ee.carlrobert.codegpt.settings.GeneralSettingsConfigurable"/>
         <applicationConfigurable id="settings.codegpt.services" parentId="settings.codegpt" displayName="Providers"
           instance="ee.carlrobert.codegpt.settings.service.ServiceConfigurable"/>
-        <applicationConfigurable id="settings.codegpt.services.codegpt" parentId="settings.codegpt.services" displayName="CodeGPT"
+        <applicationConfigurable id="settings.codegpt.services.codegpt" parentId="settings.codegpt.services" displayName="GizmoGPT"
           instance="ee.carlrobert.codegpt.settings.service.codegpt.CodeGPTServiceConfigurable"/>
         <applicationConfigurable id="settings.codegpt.services.openai" parentId="settings.codegpt.services" displayName="OpenAI"
           instance="ee.carlrobert.codegpt.settings.service.OpenAIServiceConfigurable"/>
@@ -76,10 +76,10 @@
         <inline.completion.provider
           id="CodeGPTInlineCompletionProvider"
           implementation="ee.carlrobert.codegpt.codecompletions.DebouncedCodeCompletionProvider"/>
-        <toolWindow id="CodeGPT" icon="ee.carlrobert.codegpt.Icons.DefaultSmall" anchor="right"
+        <toolWindow id="GizmoGPT" icon="ee.carlrobert.codegpt.Icons.DefaultSmall" anchor="right"
             factoryClass="ee.carlrobert.codegpt.toolwindow.ProjectToolWindowFactory"/>
-        <notificationGroup id="CodeGPT Notification Group" displayType="BALLOON" key="notification.group.name"/>
-        <notificationGroup id="CodeGPT Notification Group Sticky" displayType="STICKY_BALLOON" key="notification.group.sticky.name"/>
+        <notificationGroup id="GizmoGPT Notification Group" displayType="BALLOON" key="notification.group.name"/>
+        <notificationGroup id="GizmoGPT Notification Group Sticky" displayType="STICKY_BALLOON" key="notification.group.sticky.name"/>
         <statusBarWidgetFactory order="first" id="ee.carlrobert.codegpt.statusbar.widget"
           implementation="ee.carlrobert.codegpt.statusbar.CodeGPTStatusBarWidgetFactory"/>
         <nameSuggestionProvider implementation="ee.carlrobert.codegpt.refactorings.DefaultNameSuggestionProvider"/>
@@ -128,45 +128,45 @@
 
         <group id="CodeGPTEditorPopup">
             <group id="action.editor.group.EditorActionGroup"
-                text="CodeGPT"
+                text="GizmoGPT"
                 class="com.intellij.openapi.actionSystem.DefaultActionGroup"
                 popup="true"
                 icon="ee.carlrobert.codegpt.Icons.DefaultSmall">
                 <action
-                  id="CodeGPT.NewChat"
+                  id="GizmoGPT.NewChat"
                   class="ee.carlrobert.codegpt.actions.editor.OpenNewChatAction"
                   text="New Chat"
                   description="Creates a new chat session">
                     <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt shift N" replace-all="true"/>
                 </action>
                 <action
-                  id="CodeGPT.AddSelectionToContext"
+                  id="GizmoGPT.AddSelectionToContext"
                   class="ee.carlrobert.codegpt.actions.editor.AddSelectionToContextAction"
                   text="Include Selection in Prompt"
-                  description="Adds the selected text to the CodeGPT context">
+                  description="Adds the selected text to the GizmoGPT context">
                     <keyboard-shortcut keymap="$default" first-keystroke="ctrl shift I" replace-all="true"/>
                 </action>
                 <action
-                  id="CodeGPT.ContextMenuEditCodeAction"
+                  id="GizmoGPT.ContextMenuEditCodeAction"
                   text="Edit Code"
                   description="Edit code in natural language"
                   class="ee.carlrobert.codegpt.actions.editor.EditCodeContextMenuAction">
                     <keyboard-shortcut keymap="$default" first-keystroke="ctrl shift K" replace-all="true"/>
                 </action>
                 <action
-                  id="CodeGPT.IncludeFileInContext"
+                  id="GizmoGPT.IncludeFileInContext"
                   text="Include File In Prompt"
                   class="ee.carlrobert.codegpt.actions.IncludeFilesInContextAction">
                     <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt shift F" replace-all="true"/>
                 </action>
                 <action
-                  id="CodeGPT.AskQuestion"
+                  id="GizmoGPT.AskQuestion"
                   text="Ask Question"
                   class="ee.carlrobert.codegpt.actions.editor.AskQuestionAction">
                     <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt shift Q" replace-all="true"/>
                 </action>
                 <separator/>
-                <group id="CodeGPT.MyEditorActionsGroup"
+                <group id="GizmoGPT.MyEditorActionsGroup"
                   text="My Actions"
                   class="com.intellij.openapi.actionSystem.DefaultActionGroup">
                 </group>
@@ -174,19 +174,19 @@
             <add-to-group group-id="EditorPopupMenu1" anchor="first"/>
             <separator/>
         </group>
-        <action id="CodeGPT.TriggerEditorPopup"
+        <action id="GizmoGPT.TriggerEditorPopup"
           class="ee.carlrobert.codegpt.actions.editor.ShowEditorActionGroupAction"
-          text="Show CodeGPT Actions">
+          text="Show GizmoGPT Actions">
             <keyboard-shortcut first-keystroke="ctrl shift alt m" keymap="$default"/>
         </action>
-        <group id="CodeGPT.ProjectViewPopupMenuRootGroup">
-            <group id="CodeGPT.ProjectViewPopupMenuGroup"
-              text="CodeGPT"
+        <group id="GizmoGPT.ProjectViewPopupMenuRootGroup">
+            <group id="GizmoGPT.ProjectViewPopupMenuGroup"
+              text="GizmoGPT"
               class="com.intellij.openapi.actionSystem.DefaultActionGroup"
               popup="true"
               icon="ee.carlrobert.codegpt.Icons.DefaultSmall">
                 <action
-                  id="CodeGPT.IncludeFilesInContextAction"
+                  id="GizmoGPT.IncludeFilesInContextAction"
                   text="Include Files In Prompt"
                   class="ee.carlrobert.codegpt.actions.IncludeFilesInContextAction" />
             </group>
@@ -197,10 +197,10 @@
             <separator/>
         </group>
 
-        <group id="CodeGPT.VcsLogContextMenu">
+        <group id="GizmoGPT.VcsLogContextMenu">
             <separator/>
             <action
-              id="CodeGPT.ExplainGitCommitAction"
+              id="GizmoGPT.ExplainGitCommitAction"
               class="ee.carlrobert.codegpt.actions.ExplainGitCommitAction"/>
             <add-to-group
               group-id="Vcs.Log.ContextMenu"
@@ -209,16 +209,16 @@
             <separator/>
         </group>
 
-        <group id="CodeGPT.FloatingCodeToolbarMenuRootGroup">
+        <group id="GizmoGPT.FloatingCodeToolbarMenuRootGroup">
             <action
-              id="CodeGPT.FloatingMenuEditCodeAction"
+              id="GizmoGPT.FloatingMenuEditCodeAction"
               text="Edit Code"
               description="Edit code in natural language"
               class="ee.carlrobert.codegpt.actions.editor.EditCodeFloatingMenuAction">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl shift K" replace-all="true"/>
             </action>
             <action
-              id="CodeGPT.AddSelectionToContextAction"
+              id="GizmoGPT.AddSelectionToContextAction"
               text="Include Selection in Prompt"
               class="ee.carlrobert.codegpt.actions.editor.AddSelectionToContextAction">
                 <keyboard-shortcut keymap="$default" first-keystroke="ctrl shift I" replace-all="true"/>
@@ -297,20 +297,20 @@
             <reference id="statusbar.enableCompletions" />
         </group>
 
-        <group id="CodeGPT.GenerateGitCommitMessageGroup"
-               text="CodeGPT"
+        <group id="GizmoGPT.GenerateGitCommitMessageGroup"
+               text="GizmoGPT"
                popup="true"
                icon="ee.carlrobert.codegpt.Icons.DefaultSmall">
             <add-to-group group-id="Vcs.MessageActionGroup" anchor="first"/>
             <action
-                id="CodeGPT.GenerateGitCommitMessage"
+                id="GizmoGPT.GenerateGitCommitMessage"
                 class="ee.carlrobert.codegpt.actions.GenerateCommitMessageAction"/>
             <action
-                id="CodeGPT.GenerateGitCommitMessageWithAdditionalInput"
+                id="GizmoGPT.GenerateGitCommitMessageWithAdditionalInput"
                 class="ee.carlrobert.codegpt.actions.GenerateCommitMessageWithAdditionalInputAction"/>
             <separator/>
             <action
-              id="CodeGPT.ReviewChanges"
+              id="GizmoGPT.ReviewChanges"
               class="ee.carlrobert.codegpt.actions.ReviewChangesAction"/>
         </group>
     </actions>

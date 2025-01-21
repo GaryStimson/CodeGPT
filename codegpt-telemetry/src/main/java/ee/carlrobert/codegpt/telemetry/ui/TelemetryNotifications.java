@@ -39,7 +39,7 @@ public class TelemetryNotifications {
 
     public void queryUserConsent() {
         Notification notification = group.createNotification(
-                "Help CodeGPT improve its extensions by allowing them to collect anonymous usage data. " +
+                "Help GizmoGPT improve its extensions by allowing them to collect anonymous usage data. " +
                 "Read our <a href=\"https://codegpt.ee/privacy\">privacy statement</a> " +
                 "and learn how to <a href=\"\">opt out</a>.",
         NotificationType.INFORMATION);

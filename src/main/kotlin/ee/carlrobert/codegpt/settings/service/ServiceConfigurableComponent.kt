@@ -40,7 +40,7 @@ class ServiceConfigurableComponent {
             serviceComboBox
         )
         .addVerticalGap(8)
-        .addComponent(JBLabel("All available providers that can be used with CodeGPT:"))
+        .addComponent(JBLabel("All available providers that can be used with GizmoGPT:"))
         .addVerticalGap(8)
         .addComponent(FormBuilder.createFormBuilder()
             .setFormLeftIndent(20).apply {
@@ -52,7 +52,7 @@ class ServiceConfigurableComponent {
 
     private fun addLinks(formBuilder: FormBuilder) {
         mapOf(
-            "CodeGPT" to CodeGPTServiceConfigurable::class.java,
+            "GizmoGPT" to CodeGPTServiceConfigurable::class.java,
             "OpenAI" to OpenAIServiceConfigurable::class.java,
             "Custom OpenAI" to CustomServiceConfigurable::class.java,
             "Azure" to AzureServiceConfigurable::class.java,

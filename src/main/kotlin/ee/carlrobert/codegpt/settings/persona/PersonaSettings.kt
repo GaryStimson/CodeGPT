@@ -18,6 +18,6 @@ class PersonaSettingsState : BaseState() {
 
 class PersonaDetailsState : BaseState() {
     var id by property(1L)
-    var name by string("CodeGPT Default")
+    var name by string("GizmoGPT Default")
     var instructions by string(PersonasState.DEFAULT_PERSONA_PROMPT)
 }

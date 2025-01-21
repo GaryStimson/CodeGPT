@@ -81,7 +81,7 @@ class PersonasState : BaseState() {
         val DEFAULT_PERSONA_PROMPT = getResourceContent("/prompts/persona/default-persona.txt")
         val DEFAULT_PERSONA = PersonaPromptDetailsState().apply {
             id = 1L
-            name = "CodeGPT Default"
+            name = "GizmoGPT Default"
             instructions = DEFAULT_PERSONA_PROMPT
         }
     }

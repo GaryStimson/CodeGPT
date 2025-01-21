@@ -26,7 +26,7 @@ import java.util.stream.Collectors;
 import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.NotNull;
 
-@State(name = "CodeGPT", storages = @Storage("CodeGPT_LlamaSettings.xml"))
+@State(name = "GizmoGPT", storages = @Storage("CodeGPT_LlamaSettings.xml"))
 public class LlamaSettings implements PersistentStateComponent<LlamaSettingsState> {
 
   private LlamaSettingsState state = new LlamaSettingsState();

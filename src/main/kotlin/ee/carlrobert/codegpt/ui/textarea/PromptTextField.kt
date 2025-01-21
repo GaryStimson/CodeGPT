@@ -192,7 +192,7 @@ class PromptTextField(
 
     private fun getToolWindowHeight(): Int {
         return project.service<ToolWindowManager>()
-            .getToolWindow("CodeGPT")?.component?.visibleRect?.height ?: 400
+            .getToolWindow("GizmoGPT")?.component?.visibleRect?.height ?: 400
     }
 }
 

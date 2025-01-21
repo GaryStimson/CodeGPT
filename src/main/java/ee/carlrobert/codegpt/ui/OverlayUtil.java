@@ -36,8 +36,8 @@ import org.jetbrains.annotations.NotNull;
 
 public class OverlayUtil {
 
-  public static final String NOTIFICATION_GROUP_ID = "CodeGPT Notification Group";
-  public static final String NOTIFICATION_GROUP_STICKY_ID = "CodeGPT Notification Group Sticky";
+  public static final String NOTIFICATION_GROUP_ID = "GizmoGPT Notification Group";
+  public static final String NOTIFICATION_GROUP_STICKY_ID = "GizmoGPT Notification Group Sticky";
 
   private OverlayUtil() {
   }
@@ -49,7 +49,7 @@ public class OverlayUtil {
 
   public static Notification getDefaultNotification(
       @NotNull String content, @NotNull NotificationType type, @NotNull AnAction... actions) {
-    var notification = new Notification(NOTIFICATION_GROUP_ID, "CodeGPT", content, type);
+    var notification = new Notification(NOTIFICATION_GROUP_ID, "GizmoGPT", content, type);
     notification.setListener(new NotificationListener.UrlOpeningListener(true));
     Arrays.asList(actions).forEach(notification::addAction);
     return notification;
@@ -62,7 +62,7 @@ public class OverlayUtil {
 
   public static Notification getStickyNotification(
       @NotNull String content, @NotNull NotificationType type, @NotNull AnAction... actions) {
-    var notification = new Notification(NOTIFICATION_GROUP_STICKY_ID, "CodeGPT", content, type);
+    var notification = new Notification(NOTIFICATION_GROUP_STICKY_ID, "GizmoGPT", content, type);
     Arrays.asList(actions).forEach(notification::addAction);
     return notification;
   }

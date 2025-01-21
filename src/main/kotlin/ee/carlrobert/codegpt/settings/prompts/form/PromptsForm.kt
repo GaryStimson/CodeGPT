@@ -260,7 +260,7 @@ class PromptsForm {
                 val selectedNode = tree.selectionPath?.lastPathComponent
                 selectedNode is PromptDetailsTreeNode
                         && selectedNode.category != PromptCategory.CORE_ACTIONS
-                        && selectedNode.details.name != "CodeGPT Default"
+                        && selectedNode.details.name != "GizmoGPT Default"
             }
             .addExtraAction(object :
                 AnAction("Duplicate", "Duplicate prompt", AllIcons.Actions.Copy) {
