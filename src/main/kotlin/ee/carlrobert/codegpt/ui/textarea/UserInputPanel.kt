@@ -154,25 +154,25 @@ class UserInputPanel(
                 icon = AllIcons.FileTypes.Image
                 font = JBUI.Fonts.smallFont()
             }
-        val modelComboBox = ModelComboBoxAction(
-            project,
-            {
-                imageActionSupported.set(isImageActionSupported())
-                // TODO: Implement a proper session management
-                val conversationService = service<ConversationService>()
-                if (conversation.messages.isNotEmpty()) {
-                    conversationService.startConversation()
-                    project.service<ChatToolWindowContentManager>().createNewTabPanel()
-                } else {
-                    conversation.model = conversationService.getModelForSelectedService(it)
-                }
-            },
-            service<GeneralSettings>().state.selectedService
-        ).createCustomComponent(ActionPlaces.UNKNOWN)
+//        val modelComboBox = ModelComboBoxAction(
+//            project,
+//            {
+//                imageActionSupported.set(isImageActionSupported())
+//                // TODO: Implement a proper session management
+//                val conversationService = service<ConversationService>()
+//                if (conversation.messages.isNotEmpty()) {
+//                    conversationService.startConversation()
+//                    project.service<ChatToolWindowContentManager>().createNewTabPanel()
+//                } else {
+//                    conversation.model = conversationService.getModelForSelectedService(it)
+//                }
+//            },
+//            service<GeneralSettings>().state.selectedService
+//        ).createCustomComponent(ActionPlaces.UNKNOWN)
 
         return panel {
             twoColumnsRow({
-                cell(modelComboBox).gap(RightGap.SMALL)
+//                cell(modelComboBox).gap(RightGap.SMALL)
                 cell(attachImageLink).visibleIf(imageActionSupported)
             }, {
                 panel {

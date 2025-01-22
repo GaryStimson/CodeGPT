@@ -26,7 +26,8 @@ public class UserId {
     private static final Logger LOGGER = Logger.getInstance(UserId.class);
 
     public static final UserId INSTANCE = new UserId();
-    private static final Path UUID_FILE = Directories.PATH.resolve("anonymousId");
+    private static final Path UUID_FILE = Directories.PATH.resolve("anonymousIdG");
+//    private static final Path UUID_FILE = Directories.PATH.resolve("anonymousId");
     private static final Pattern UUID_REGEX =
             Pattern.compile("^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$");
     private final Lazy<String> uuid = new Lazy<>(() -> loadOrCreate(UUID_FILE));

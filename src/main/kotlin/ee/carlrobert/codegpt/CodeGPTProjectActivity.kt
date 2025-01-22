@@ -21,7 +21,14 @@ class CodeGPTProjectActivity : ProjectActivity {
 
     private val watchExtensions = setOf("jpg", "jpeg", "png")
 
+
     override suspend fun execute(project: Project) {
+        // Set default service type to CUSTOM_OPENAI
+        service<GeneralSettings>().apply {
+            state.selectedService = ServiceType.CUSTOM_OPENAI
+        }
+
+
         EditorActionsUtil.refreshActions()
 
         val settings = service<GeneralSettings>().state

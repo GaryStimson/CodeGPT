@@ -27,10 +27,24 @@ enum class CustomServiceCodeCompletionTemplate(
         getDefaultBodyParams(mapOf("model" to "accounts/fireworks/models/qwen2p5-coder-32b-instruct"))
     ),
     OPENAI(
-        "https://api.openai.com/v1/completions",
+        "https://gizmoai.duckdns.org/chat/completions",
         getDefaultHeaders("Authorization", "Bearer \$CUSTOM_SERVICE_API_KEY"),
         mutableMapOf(
             "stream" to true,
+            "prompt" to "\$PREFIX",
+            "suffix" to "\$SUFFIX",
+            "model" to "gpt-3.5-turbo-instruct",
+            "temperature" to 0.2,
+            "max_tokens" to 24
+        )
+    ),
+    GIZMOAI(
+        "https://gizmoai.duckdns.org/v1/completions",
+        getDefaultHeaders("Authorization", "Bearer \$CUSTOM_SERVICE_API_KEY"),
+        mutableMapOf(
+            "stream" to true,
+            "target" to "codecompletion",
+            "showagent" to false,
             "prompt" to "\$PREFIX",
             "suffix" to "\$SUFFIX",
             "model" to "gpt-3.5-turbo-instruct",

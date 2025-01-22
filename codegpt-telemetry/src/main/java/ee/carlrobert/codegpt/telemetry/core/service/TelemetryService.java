@@ -59,41 +59,43 @@ public class TelemetryService implements ITelemetryService {
 
     @Override
     public void send(TelemetryEvent event) {
-        sendUserInfo();
-        doSend(event);
-        queryUserConsent();
+//        sendUserInfo();
+//        doSend(event);
+//        queryUserConsent();
     }
 
     private void sendUserInfo() {
-        doSend(new TelemetryEvent(
-                Type.USER,
-                "Anonymous ID: " + UserId.INSTANCE.get()));
+//        doSend(new TelemetryEvent(
+//                Type.USER,
+//                "Anonymous ID: " + UserId.INSTANCE.get()));
     }
 
     private void queryUserConsent() {
-        if (!isConfigured()
-                && userQueried.compareAndSet(false, true)) {
-            notifications.queryUserConsent();
-        }
+//        if (!isConfigured()
+//                && userQueried.compareAndSet(false, true)) {
+//            notifications.queryUserConsent();
+//        }
     }
 
     private void doSend(TelemetryEvent event) {
         if (isEnabled()) {
             flushOnHold();
-            broker.send(event);
+//            broker.send(event);
         } else if (!isConfigured()) {
-            onHold.offer(event);
+//            onHold.offer(event);
         }
     }
 
     private boolean isEnabled() {
-        return configuration != null
-                && configuration.isEnabled();
+        return false;
+//        return configuration != null
+//                && configuration.isEnabled();
     }
 
     private boolean isConfigured() {
-        return configuration != null
-                && configuration.isConfigured();
+        return false;
+//        return configuration != null
+//                && configuration.isConfigured();
     }
 
     private void flushOnHold() {

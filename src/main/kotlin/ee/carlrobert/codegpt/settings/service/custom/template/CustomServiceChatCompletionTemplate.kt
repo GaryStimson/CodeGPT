@@ -60,6 +60,19 @@ enum class CustomServiceChatCompletionTemplate(
             )
         )
     ),
+    GIZMOAI(
+        "https://gizmoai.duckdns.org/chat/completions",
+        getDefaultHeaders("Authorization", "Bearer \$CUSTOM_SERVICE_API_KEY"),
+        getDefaultBodyParams(
+            mapOf(
+                "target" to "langchain",
+                "showagent" to true,
+                "temperature" to 0.5,
+                "model" to "gpt-4",
+                "max_tokens" to 1024
+            )
+        )
+    ),
     PERPLEXITY(
         "https://api.perplexity.ai/chat/completions",
         getDefaultHeadersWithAuthentication(),

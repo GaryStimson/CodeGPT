@@ -78,7 +78,7 @@ class CustomServiceForm {
         .addLabeledComponent(
             CodeGPTBundle.get("settingsConfigurable.service.custom.openai.presetTemplate.label"),
             JPanel(FlowLayout(FlowLayout.LEADING, 0, 0)).apply {
-                add(templateComboBox)
+//                add(templateComboBox)
                 add(Box.createHorizontalStrut(8))
                 add(templateHelpText)
             }

@@ -22,7 +22,9 @@ public class TelemetryConfiguration extends CompositeConfiguration {
     public static final String KEY_MODE = "ee.carlrobert.telemetry.mode";
 
     private static final SaveableFileConfiguration FILE = new SaveableFileConfiguration(
-            Directories.PATH.resolve("ee.carlrobert.intellij.telemetry"));
+            Directories.PATH.resolve("ee.garystimson.intellij.telemetry"));
+//    private static final SaveableFileConfiguration FILE = new SaveableFileConfiguration(
+//            Directories.PATH.resolve("ee.carlrobert.intellij.telemetry"));
 
     private static final TelemetryConfiguration INSTANCE = new TelemetryConfiguration();
 

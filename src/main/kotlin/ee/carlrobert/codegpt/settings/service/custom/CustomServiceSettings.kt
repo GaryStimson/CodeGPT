@@ -10,8 +10,8 @@ import ee.carlrobert.codegpt.util.MapConverter
 
 @Service
 @State(
-    name = "CodeGPT_CustomServiceSettings",
-    storages = [Storage("CodeGPT_CustomServiceSettings.xml")]
+    name = "GizmoGPT_CustomServiceSettings",
+    storages = [Storage("GizmoGPT_CustomServiceSettings.xml")]
 )
 class CustomServiceSettings :
     SimplePersistentStateComponent<CustomServiceState>(CustomServiceState()) {
@@ -51,30 +51,30 @@ class CustomServiceState : BaseState() {
 }
 
 class CustomServiceChatCompletionSettingsState : BaseState() {
-    var url by string(CustomServiceChatCompletionTemplate.OPENAI.url)
+    var url by string(CustomServiceChatCompletionTemplate.GIZMOAI.url)
     var headers by map<String, String>()
 
     @get:OptionTag(converter = MapConverter::class)
     var body by map<String, Any>()
 
     init {
-        headers.putAll(CustomServiceChatCompletionTemplate.OPENAI.headers)
-        body.putAll(CustomServiceChatCompletionTemplate.OPENAI.body)
+        headers.putAll(CustomServiceChatCompletionTemplate.GIZMOAI.headers)
+        body.putAll(CustomServiceChatCompletionTemplate.GIZMOAI.body)
     }
 }
 
 class CustomServiceCodeCompletionSettingsState : BaseState() {
-    var codeCompletionsEnabled by property(true)
+    var codeCompletionsEnabled by property(false)
     var parseResponseAsChatCompletions by property(false)
     var infillTemplate by enum(InfillPromptTemplate.OPENAI)
-    var url by string(CustomServiceCodeCompletionTemplate.OPENAI.url)
+    var url by string(CustomServiceCodeCompletionTemplate.GIZMOAI.url)
     var headers by map<String, String>()
 
     @get:OptionTag(converter = MapConverter::class)
     var body by map<String, Any>()
 
     init {
-        headers.putAll(CustomServiceCodeCompletionTemplate.OPENAI.headers)
-        body.putAll(CustomServiceCodeCompletionTemplate.OPENAI.body)
+        headers.putAll(CustomServiceCodeCompletionTemplate.GIZMOAI.headers)
+        body.putAll(CustomServiceCodeCompletionTemplate.GIZMOAI.body)
     }
 }

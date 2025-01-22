@@ -109,7 +109,7 @@ class CustomServiceCodeCompletionForm(
             .addLabeledComponent(
                 "FIM template:",
                 JPanel(FlowLayout(FlowLayout.LEADING, 0, 0)).apply {
-                    add(promptTemplateComboBox)
+//                    add(promptTemplateComboBox)
                     add(Box.createHorizontalStrut(4))
                     add(promptTemplateHelpText)
                 })

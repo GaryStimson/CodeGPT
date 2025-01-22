@@ -8,8 +8,8 @@ import kotlin.math.min
 
 @Service
 @State(
-    name = "CodeGPT_ConfigurationSettings_210",
-    storages = [Storage("CodeGPT_ConfigurationSettings_210.xml")]
+    name = "GizmoGPT_ConfigurationSettings_210",
+    storages = [Storage("GizmoGPT_ConfigurationSettings_210.xml")]
 )
 class ConfigurationSettings :
     SimplePersistentStateComponent<ConfigurationSettingsState>(ConfigurationSettingsState()) {
@@ -25,8 +25,8 @@ class ConfigurationSettingsState : BaseState() {
     var commitMessagePrompt by string(CoreActionsState.DEFAULT_GENERATE_COMMIT_MESSAGE_PROMPT)
     var maxTokens by property(2048)
     var temperature by property(0.1f) { max(0f, min(1f, it)) }
-    var checkForPluginUpdates by property(true)
-    var checkForNewScreenshots by property(true)
+    var checkForPluginUpdates by property(false)
+    var checkForNewScreenshots by property(false)
     var ignoreGitCommitTokenLimit by property(false)
     var methodNameGenerationEnabled by property(true)
     var captureCompileErrors by property(true)
