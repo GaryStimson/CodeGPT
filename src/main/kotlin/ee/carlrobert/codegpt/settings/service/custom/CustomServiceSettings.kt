@@ -65,7 +65,7 @@ class CustomServiceChatCompletionSettingsState : BaseState() {
 
 class CustomServiceCodeCompletionSettingsState : BaseState() {
     var codeCompletionsEnabled by property(false)
-    var parseResponseAsChatCompletions by property(false)
+    var parseResponseAsChatCompletions by property(true)
     var infillTemplate by enum(InfillPromptTemplate.OPENAI)
     var url by string(CustomServiceCodeCompletionTemplate.GIZMOAI.url)
     var headers by map<String, String>()
