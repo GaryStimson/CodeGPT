@@ -27,6 +27,7 @@ public class GeneralSettings implements PersistentStateComponent<GeneralSettings
 
   private GeneralSettingsState state = new GeneralSettingsState();
 
+
   @Override
   @NotNull
   public GeneralSettingsState getState() {
@@ -43,6 +44,8 @@ public class GeneralSettings implements PersistentStateComponent<GeneralSettings
   }
 
   public static GeneralSettings getInstance() {
+
+
     return ApplicationManager.getApplication().getService(GeneralSettings.class);
   }
 

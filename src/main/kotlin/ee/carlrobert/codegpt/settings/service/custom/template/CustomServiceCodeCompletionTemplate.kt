@@ -1,5 +1,6 @@
 package ee.carlrobert.codegpt.settings.service.custom.template
 
+
 enum class CustomServiceCodeCompletionTemplate(
     val url: String,
     val headers: MutableMap<String, String>,

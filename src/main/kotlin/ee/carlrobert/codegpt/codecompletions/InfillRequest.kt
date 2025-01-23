@@ -83,6 +83,7 @@ class InfillRequest private constructor(
             }
         }
 
+
         fun build(): InfillRequest {
             val modifiedPrefix = if (!additionalContext.isNullOrEmpty()) {
                 "/*\n${additionalContext}\n*/\n\n$prefix"
