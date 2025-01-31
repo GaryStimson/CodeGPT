@@ -56,12 +56,12 @@ class AutoApplyAction(
     }
 
     override fun update(e: AnActionEvent) {
-        val isCodeGPTSelected = GeneralSettings.getSelectedService() == ServiceType.CODEGPT
-        if (isCodeGPTSelected) {
+//        val isCodeGPTSelected = GeneralSettings.getSelectedService() == ServiceType.CODEGPT
+//        if (isCodeGPTSelected) {
             validateAndUpdatePresentation(e)
-        } else {
-            e.presentation.disableAction(CodeGPTBundle.get("toolwindow.chat.editor.action.autoApply.disabledTitle"))
-        }
+//        } else {
+//            e.presentation.disableAction(CodeGPTBundle.get("toolwindow.chat.editor.action.autoApply.disabledTitle"))
+//        }
     }
 
     override fun handleAction(event: AnActionEvent) {

@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
 
 public final class CodeGPTPlugin {
 
-  public static final PluginId CODEGPT_ID = PluginId.getId("ee.carlrobert.chatgpt");
+  public static final PluginId CODEGPT_ID = PluginId.getId("ee.garystimson.gizmogpt");
 
   private CodeGPTPlugin() {
   }
