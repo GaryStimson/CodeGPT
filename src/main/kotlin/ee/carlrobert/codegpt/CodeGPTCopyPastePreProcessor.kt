@@ -60,7 +60,7 @@ class CodeGPTCopyPastePreProcessor : CopyPastePreProcessor {
         val currentTokens = getDocumentTokenCount(documentText)
         if (currentTokens > MAX_TOKEN_LIMIT) return
 
-        if (!isCredentialSet(CODEGPT_API_KEY) && currentTokens > FREE_TIER_TOKEN_LIMIT) return
+//        if (!isCredentialSet(CODEGPT_API_KEY) && currentTokens > FREE_TIER_TOKEN_LIMIT) return
 
         CoroutineScope(Dispatchers.IO).launch {
             handleDisplay()
@@ -68,8 +68,10 @@ class CodeGPTCopyPastePreProcessor : CopyPastePreProcessor {
     }
 
     private fun isPredictionEnabled(): Boolean =
-        GeneralSettings.getSelectedService() == ServiceType.CODEGPT &&
                 service<CodeGPTServiceSettings>().state.codeAssistantEnabled
+//    private fun isPredictionEnabled(): Boolean =
+//        GeneralSettings.getSelectedService() == ServiceType.CODEGPT &&
+//                service<CodeGPTServiceSettings>().state.codeAssistantEnabled
 
     private fun getDocumentTokenCount(text: String): Int =
         EncodingManager.getInstance().countTokens(text)

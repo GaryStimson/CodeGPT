@@ -50,18 +50,27 @@ class CodeCompletionInsertAction :
                 val beforeApply = editor.document.text
                 InlineCompletion.getHandlerOrNull(editor)?.insert()
 
-                if (GeneralSettings.getSelectedService() == ServiceType.CODEGPT
-                    && service<CodeGPTServiceSettings>().state.codeAssistantEnabled
-                    && service<EncodingManager>().countTokens(editor.document.text) <= 4096) {
-                    ApplicationManager.getApplication().executeOnPooledThread {
-                        service<PredictionService>().displayAutocompletePrediction(
-                            editor,
-                            textToInsert,
-                            beforeApply
-                        )
-                    }
-                    return
+//                if (GeneralSettings.getSelectedService() == ServiceType.CODEGPT
+//                    && service<CodeGPTServiceSettings>().state.codeAssistantEnabled
+//                    && service<EncodingManager>().countTokens(editor.document.text) <= 4096) {
+//                    ApplicationManager.getApplication().executeOnPooledThread {
+//                        service<PredictionService>().displayAutocompletePrediction(
+//                            editor,
+//                            textToInsert,
+//                            beforeApply
+//                        )
+//                    }
+//                    return
+//                }
+                ApplicationManager.getApplication().executeOnPooledThread {
+                    service<PredictionService>().displayAutocompletePrediction(
+                        editor,
+                        textToInsert,
+                        beforeApply
+                    )
                 }
+                return
+
             }
 
             for (element in elements) {

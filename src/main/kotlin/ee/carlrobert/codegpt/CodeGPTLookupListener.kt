@@ -34,14 +34,19 @@ class CodeGPTLookupListener : LookupManagerListener {
 
                 override fun itemSelected(event: LookupEvent) {
                     val editor = newLookup.editor
-                    val encodingManager = EncodingManager.getInstance()
-                    if (GeneralSettings.getSelectedService() != ServiceType.CODEGPT
-                        || !service<CodeGPTServiceSettings>().state.codeAssistantEnabled
-                        || encodingManager.countTokens(editor.document.text) > 4096
-                        || !isCredentialSet(CODEGPT_API_KEY) && encodingManager.countTokens(editor.document.text) > 2048
-                    ) {
-                        return
-                    }
+//                    val encodingManager = EncodingManager.getInstance()
+//                    if ( !service<CodeGPTServiceSettings>().state.codeAssistantEnabled
+//                        || encodingManager.countTokens(editor.document.text) > 4096
+//                    ) {
+//                        return
+//                    }
+//                    if (GeneralSettings.getSelectedService() != ServiceType.CODEGPT
+//                        || !service<CodeGPTServiceSettings>().state.codeAssistantEnabled
+//                        || encodingManager.countTokens(editor.document.text) > 4096
+//                        || !isCredentialSet(CODEGPT_API_KEY) && encodingManager.countTokens(editor.document.text) > 2048
+//                    ) {
+//                        return
+//                    }
 
                     ApplicationManager.getApplication().executeOnPooledThread {
                         service<PredictionService>().displayLookupPrediction(

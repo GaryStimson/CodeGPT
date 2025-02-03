@@ -130,7 +130,7 @@ class DebouncedCodeCompletionProvider : DebouncedInlineCompletionProvider() {
     }
 
     override suspend fun getDebounceDelay(request: InlineCompletionRequest): Duration {
-        return 600.toDuration(DurationUnit.MILLISECONDS)
+        return 1000.toDuration(DurationUnit.MILLISECONDS)
     }
 
     override fun isEnabled(event: InlineCompletionEvent): Boolean {

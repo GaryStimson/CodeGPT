@@ -30,9 +30,9 @@ class TriggerCustomPredictionAction : EditorAction(Handler()), HintManagerImpl.A
     private class Handler : EditorWriteActionHandler() {
 
         override fun doExecute(editor: Editor, caret: Caret?, dataContext: DataContext?) {
-            if (GeneralSettings.getSelectedService() != ServiceType.CODEGPT) {
-                return
-            }
+//            if (GeneralSettings.getSelectedService() != ServiceType.CODEGPT) {
+//                return
+//            }
 
             if (!service<CodeGPTServiceSettings>().state.codeAssistantEnabled) {
                 val notification = OverlayUtil.getDefaultNotification(
@@ -51,14 +51,14 @@ class TriggerCustomPredictionAction : EditorAction(Handler()), HintManagerImpl.A
             }
 
             val encodingManager = service<EncodingManager>()
-            if (!isCredentialSet(CODEGPT_API_KEY) && encodingManager.countTokens(editor.document.text) > 2048) {
-                OverlayUtil.showNotification("The file exceeds the token limit of 2,048. Please upgrade your plan to access higher limits.")
-                return
-            }
-            if (encodingManager.countTokens(editor.document.text) > 4096) {
-                OverlayUtil.showNotification("The file exceeds the token limit of 4,096.")
-                return
-            }
+//            if (!isCredentialSet(CODEGPT_API_KEY) && encodingManager.countTokens(editor.document.text) > 2048) {
+//                OverlayUtil.showNotification("The file exceeds the token limit of 2,048. Please upgrade your plan to access higher limits.")
+//                return
+//            }
+//            if (encodingManager.countTokens(editor.document.text) > 4096) {
+//                OverlayUtil.showNotification("The file exceeds the token limit of 4,096.")
+//                return
+//            }
 
             ApplicationManager.getApplication().executeOnPooledThread {
                 service<PredictionService>().displayDirectPrediction(editor)

@@ -7,6 +7,7 @@ import com.intellij.openapi.keymap.KeymapUtil
 import com.intellij.openapi.project.Project
 import com.intellij.ui.components.JBLabel
 import ee.carlrobert.codegpt.Icons
+import ee.carlrobert.codegpt.predictions.TriggerCustomPredictionAction
 import javax.swing.JComponent
 import javax.swing.SwingConstants
 
@@ -17,9 +18,10 @@ class CodeCompletionProviderPresentation : InlineCompletionProviderPresentation 
             project?.service<CodeCompletionService>()?.getSelectedModelCode() ?: ""
         val text = if (selectedModelCode.isNotEmpty()) {
             buildString {
-                append("<html>Model: (<strong>$selectedModelCode</strong>) | ")
+                append("<html>")
                 append("Accept Word: (<strong>${getShortcutText(AcceptNextWordInlayAction.ID)}</strong>) | ")
-                append("Accept Line: (<strong>${getShortcutText(AcceptNextLineInlayAction.ID)}</strong>)</html>")
+                append("Accept Line: (<strong>${getShortcutText(AcceptNextLineInlayAction.ID)}</strong>) | ")
+                append("Trigger Generation: (<strong>${getShortcutText(TriggerCustomPredictionAction.ID)}</strong>)</html>")
             }
         } else {
             "GizmoGPT"

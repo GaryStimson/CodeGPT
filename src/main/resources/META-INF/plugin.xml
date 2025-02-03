@@ -87,6 +87,7 @@
         <nameSuggestionProvider implementation="ee.carlrobert.codegpt.refactorings.DefaultNameSuggestionProvider"/>
     </extensions>
 
+
     <resource-bundle>messages.codegpt</resource-bundle>
 
     <actions>
