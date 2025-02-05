@@ -87,9 +87,13 @@ class CustomOpenAIRequestFactory : BaseRequestFactory() {
                 requestBuilder.addHeader(key, headerValue)
             }
 
+            val isCommitMessage = (Exception().stackTrace.size > 2 &&  Exception().stackTrace[3].className.endsWith(".GenerateCommitMessageAction" )) || (Exception().stackTrace.size > 3 &&  Exception().stackTrace[4].className.endsWith(".GenerateCommitMessageAction" ))
+
             val body = settings.body.mapValues { (key, value) ->
                 when {
                     !streamRequest && key == "stream" -> false
+                    isCommitMessage && key == "target" -> "ollama"
+                    isCommitMessage && key == "showagent" -> false
                     value is String && value.trim() == "\$OPENAI_MESSAGES" -> messages
                     else -> value
                 }

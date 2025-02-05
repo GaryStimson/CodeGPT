@@ -28,6 +28,7 @@ import git4idea.repo.GitRepository
 import okhttp3.sse.EventSource
 import java.io.StringWriter
 import java.nio.file.Path
+import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 
 abstract class BaseCommitWorkflowAction : DumbAwareAction() {
 
@@ -79,16 +80,21 @@ abstract class BaseCommitWorkflowAction : DumbAwareAction() {
         return generateDiff(
             project,
             commitWorkflowUi.getIncludedChanges(),
-            getRepository(project).root.toNioPath()
+            getRepository(project)
         )
     }
 
-    private fun getRepository(project: Project): GitRepository {
-        return runCatching {
-            ApplicationManager.getApplication()
-                .executeOnPooledThread<GitRepository?> { getProjectRepository(project) }
-                .get()
-        }.getOrNull() ?: throw IllegalStateException("No repository found for the project.")
+    private fun getRepository(project: Project): Path {
+        val vcsManager = ProjectLevelVcsManager.getInstance(project)
+        val roots = vcsManager.allVcsRoots
+
+        return roots.firstOrNull()?.path?.toNioPath()
+            ?: throw IllegalStateException("No VCS root found")
+//        return runCatching {
+//            ApplicationManager.getApplication()
+//                .executeOnPooledThread<GitRepository?> { getProjectRepository(project) }
+//                .get()
+//        }.getOrNull() ?: throw IllegalStateException("No repository found for the project.")
     }
 
     private fun generateDiff(
