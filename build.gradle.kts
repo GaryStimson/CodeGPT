@@ -53,7 +53,7 @@ changelog {
 dependencies {
   implementation(project(":codegpt-telemetry"))
   implementation(project(":codegpt-treesitter"))
-
+//  implementation("com.intellij.openapi:intellij-platform-ide-impl")
   implementation(platform(libs.jackson.bom))
   implementation("com.fasterxml.jackson.datatype:jackson-datatype-jdk8")
   implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")

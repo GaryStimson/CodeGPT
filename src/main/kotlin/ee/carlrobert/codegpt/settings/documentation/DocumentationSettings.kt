@@ -31,7 +31,7 @@ class DocumentationSettingsState : BaseState() {
 
 class DocumentationDetailsState : BaseState() {
     var name by string("GizmoGPT Docs")
-    var url by string("https://docs.codegpt.ee")
+    var url by string("https://github.com/GaryStimson/CodeGPT/blob/gizmomain/DESCRIPTION.md")
     var lastUsedDateTime by string()
 }
 

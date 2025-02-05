@@ -82,7 +82,7 @@ class DebouncedCodeCompletionProvider : DebouncedInlineCompletionProvider() {
         }
     }
 
-    private fun getMultiLineSuggestionDebounced(request: InlineCompletionRequest): InlineCompletionSuggestion {
+    fun getMultiLineSuggestionDebounced(request: InlineCompletionRequest): InlineCompletionSuggestion {
         return getSuggestionDebounced(
             request,
             CompletionType.MULTI_LINE
@@ -97,7 +97,7 @@ class DebouncedCodeCompletionProvider : DebouncedInlineCompletionProvider() {
         }
     }
 
-    private fun getSuggestionDebounced(
+    fun getSuggestionDebounced(
         request: InlineCompletionRequest,
         completionType: CompletionType,
         fetchCompletion: ProducerScope<InlineCompletionElement>.(Project, InfillRequest) -> EventSource
@@ -158,7 +158,7 @@ class DebouncedCodeCompletionProvider : DebouncedInlineCompletionProvider() {
         val containsActiveCompletion =
             REMAINING_EDITOR_COMPLETION.get(event.toRequest()?.editor)?.isNotEmpty() ?: false
 
-        return event is InlineCompletionEvent.DocumentChange || containsActiveCompletion
+        return event is InlineCompletionEvent.DocumentChange || event is InlineCompletionEvent.DirectCall || containsActiveCompletion
     }
 
     private fun sendNextSuggestion(

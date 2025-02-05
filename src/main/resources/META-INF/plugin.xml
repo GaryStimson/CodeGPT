@@ -1,5 +1,5 @@
 <idea-plugin>
-    <id>ee.carlrobert.chatgpt</id>
+    <id>ee.gstimson.gizmogpt</id>
     <name>GizmoGPT</name>
     <vendor email="gstimson@labvantage.com" url="https://labvantage.com">Gary Stimson</vendor>
     <depends>com.intellij.modules.platform</depends>

@@ -157,7 +157,8 @@ public final class CompletionRequestService {
             .getMessage()
             .getContent();
       } catch (IOException e) {
-        throw new RuntimeException(e);
+        //Sys;
+        return ""; // cover up error
       }
     }
     if (request instanceof ClaudeCompletionRequest completionRequest) {
