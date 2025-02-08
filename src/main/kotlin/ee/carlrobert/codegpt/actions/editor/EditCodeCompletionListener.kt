@@ -46,13 +46,14 @@ class EditCodeCompletionListener(
     override fun onError(error: ErrorDetails, ex: Throwable) {
         observableProperties.loading.set(false)
 
-        OverlayUtil.showNotification(
-            error.message,
-            NotificationType.ERROR,
-            NotificationAction.createSimpleExpiring("Upgrade plan") {
-                BrowserUtil.open("https://codegpt.ee/#pricing")
-            },
-        )
+            //todo
+//        OverlayUtil.showNotification(
+//            error.message,
+//            NotificationType.ERROR,
+//            NotificationAction.createSimpleExpiring("Upgrade plan") {
+//                BrowserUtil.open("https://codegpt.ee/#pricing")
+//            },
+//        )
     }
 
     private fun updateHighlighter(editor: Editor) {
