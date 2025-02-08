@@ -21,11 +21,11 @@ import ee.carlrobert.codegpt.settings.service.llama.LlamaSettings
 import ee.carlrobert.codegpt.settings.service.ollama.OllamaSettings
 import ee.carlrobert.codegpt.settings.service.openai.OpenAISettings
 import ee.carlrobert.codegpt.util.StringUtil.extractUntilNewline
+import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.ProducerScope
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.channelFlow
 import kotlinx.coroutines.flow.emptyFlow
-import kotlinx.coroutines.launch
 import okhttp3.sse.EventSource
 import java.util.concurrent.atomic.AtomicReference
 import kotlin.time.Duration
@@ -33,6 +33,8 @@ import kotlin.time.DurationUnit
 import kotlin.time.toDuration
 
 class DebouncedCodeCompletionProvider : DebouncedInlineCompletionProvider() {
+
+    private val coroutineScope = CoroutineScope(Dispatchers.IO + SupervisorJob())
 
     companion object {
         private val logger = thisLogger()
@@ -124,7 +126,9 @@ class DebouncedCodeCompletionProvider : DebouncedInlineCompletionProvider() {
 
         return InlineCompletionSingleSuggestion.build(elements = channelFlow {
             val infillRequest = InfillRequestUtil.buildInfillRequest(request, completionType)
-            currentCallRef.set(fetchCompletion(project, infillRequest))
+            withContext( Dispatchers.IO ) {
+                currentCallRef.set(fetchCompletion(this@channelFlow, project, infillRequest))
+            }
             awaitClose { currentCallRef.getAndSet(null)?.cancel() }
         })
     }
@@ -178,4 +182,5 @@ class DebouncedCodeCompletionProvider : DebouncedInlineCompletionProvider() {
             }
         })
     }
+
 }
