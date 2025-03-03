@@ -2,7 +2,7 @@ package ee.carlrobert.codegpt.completions;
 
 import com.intellij.openapi.application.ApplicationManager;
 import ee.carlrobert.codegpt.settings.GeneralSettings;
-import ee.carlrobert.codegpt.telemetry.TelemetryAction;
+//import ee.carlrobert.codegpt.telemetry.TelemetryAction;
 import ee.carlrobert.llm.client.openai.completion.ErrorDetails;
 import okhttp3.sse.EventSource;
 
@@ -21,9 +21,9 @@ public class ToolwindowChatCompletionRequestHandler {
       try {
         eventSource = startCall(callParameters);
       } catch (TotalUsageExceededException e) {
-        completionResponseEventListener.handleTokensExceeded(
-            callParameters.getConversation(),
-            callParameters.getMessage());
+//        completionResponseEventListener.handleTokensExceeded(
+//            callParameters.getConversation(),
+//            callParameters.getMessage());
       } finally {
         sendInfo(callParameters);
       }
@@ -46,7 +46,8 @@ public class ToolwindowChatCompletionRequestHandler {
           new ChatCompletionEventListener(callParameters, completionResponseEventListener));
     } catch (Throwable ex) {
       handleCallException(ex);
-      throw ex;
+      //throw ex;
+      return null;
     }
   }
 
@@ -61,10 +62,10 @@ public class ToolwindowChatCompletionRequestHandler {
   }
 
   private void sendInfo(ChatCompletionParameters callParameters) {
-    TelemetryAction.COMPLETION.createActionMessage()
-        .property("conversationId", callParameters.getConversation().getId().toString())
-        .property("model", callParameters.getConversation().getModel())
-        .property("service", GeneralSettings.getSelectedService().getCode().toLowerCase())
-        .send();
+//    TelemetryAction.COMPLETION.createActionMessage()
+//        .property("conversationId", callParameters.getConversation().getId().toString())
+//        .property("model", callParameters.getConversation().getModel())
+//        .property("service", GeneralSettings.getSelectedService().getCode().toLowerCase())
+//        .send();
   }
 }

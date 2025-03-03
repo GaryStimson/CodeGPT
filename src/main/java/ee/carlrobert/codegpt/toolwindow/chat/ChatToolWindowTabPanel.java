@@ -21,7 +21,7 @@ import ee.carlrobert.codegpt.completions.ToolwindowChatCompletionRequestHandler;
 import ee.carlrobert.codegpt.conversations.Conversation;
 import ee.carlrobert.codegpt.conversations.ConversationService;
 import ee.carlrobert.codegpt.conversations.message.Message;
-import ee.carlrobert.codegpt.telemetry.TelemetryAction;
+//import ee.carlrobert.codegpt.telemetry.TelemetryAction;
 import ee.carlrobert.codegpt.toolwindow.chat.editor.actions.CopyAction;
 import ee.carlrobert.codegpt.toolwindow.chat.ui.ChatMessageResponseBody;
 import ee.carlrobert.codegpt.toolwindow.chat.ui.ChatToolWindowScrollablePanel;
@@ -245,9 +245,9 @@ public class ChatToolWindowTabPanel implements Disposable {
 
       totalTokensPanel.updateConversationTokens(conversation);
 
-      TelemetryAction.IDE_ACTION.createActionMessage()
-          .property("action", ActionType.RELOAD_MESSAGE.name())
-          .send();
+//      TelemetryAction.IDE_ACTION.createActionMessage()
+//          .property("action", ActionType.RELOAD_MESSAGE.name())
+//          .send();
     }
   }
 

@@ -5,7 +5,7 @@ import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import ee.carlrobert.codegpt.actions.ActionType;
 import ee.carlrobert.codegpt.actions.editor.EditorActionsUtil;
-import ee.carlrobert.codegpt.telemetry.TelemetryAction;
+//import ee.carlrobert.codegpt.telemetry.TelemetryAction;
 import org.jetbrains.annotations.NotNull;
 
 public class CreateNewConversationAction extends AnAction {
@@ -26,9 +26,9 @@ public class CreateNewConversationAction extends AnAction {
         onCreate.run();
       }
     } finally {
-      TelemetryAction.IDE_ACTION.createActionMessage()
-          .property("action", ActionType.CREATE_NEW_CHAT.name())
-          .send();
+//      TelemetryAction.IDE_ACTION.createActionMessage()
+//          .property("action", ActionType.CREATE_NEW_CHAT.name())
+//          .send();
     }
   }
 }

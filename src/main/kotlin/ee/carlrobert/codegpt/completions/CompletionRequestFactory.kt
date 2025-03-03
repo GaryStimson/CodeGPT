@@ -16,16 +16,17 @@ interface CompletionRequestFactory {
     companion object {
         @JvmStatic
         fun getFactory(serviceType: ServiceType): CompletionRequestFactory {
-            return when (serviceType) {
-                ServiceType.CODEGPT -> CodeGPTRequestFactory()
-                ServiceType.OPENAI -> OpenAIRequestFactory()
-                ServiceType.CUSTOM_OPENAI -> CustomOpenAIRequestFactory()
-                ServiceType.AZURE -> AzureRequestFactory()
-                ServiceType.ANTHROPIC -> ClaudeRequestFactory()
-                ServiceType.GOOGLE -> GoogleRequestFactory()
-                ServiceType.OLLAMA -> OllamaRequestFactory()
-                ServiceType.LLAMA_CPP -> LlamaRequestFactory()
-            }
+            return CustomOpenAIRequestFactory();
+//            return when (serviceType) {
+//                ServiceType.CODEGPT -> CodeGPTRequestFactory()
+//                ServiceType.OPENAI -> OpenAIRequestFactory()
+//                ServiceType.CUSTOM_OPENAI -> CustomOpenAIRequestFactory()
+//                ServiceType.AZURE -> AzureRequestFactory()
+//                ServiceType.ANTHROPIC -> ClaudeRequestFactory()
+//                ServiceType.GOOGLE -> GoogleRequestFactory()
+//                ServiceType.OLLAMA -> OllamaRequestFactory()
+//                ServiceType.LLAMA_CPP -> LlamaRequestFactory()
+//            }
         }
     }
 }

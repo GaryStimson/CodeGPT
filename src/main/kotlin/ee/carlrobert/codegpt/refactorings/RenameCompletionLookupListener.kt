@@ -54,8 +54,8 @@ class RenameCompletionLookupListener : LookupManagerListener {
                         if (lookupCompletion.isNotEmpty()) {
                             addCompletionLookupValues(newLookup, lookupCompletion)
                         }
-                    } catch (ex: CodeGPTException) {
-                        OverlayUtil.showNotification(ex.detail, NotificationType.ERROR)
+//                    } catch (ex: CodeGPTException) {
+//                        OverlayUtil.showNotification(ex.detail, NotificationType.ERROR)
                     } catch (ex: Exception) {
                         logger.error(
                             "Something went wrong while requesting completion lookup values.",

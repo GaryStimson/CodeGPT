@@ -54,7 +54,7 @@ abstract class CodeCompletionEventListener(
         }
 
         if (ex.message == null || (ex.message != null && ex.message != "Canceled")) {
-            showNotification(error.message, NotificationType.ERROR)
+            //showNotification(error.message, NotificationType.ERROR)
             logger.error(error.message, ex)
         }
         setLoading(false)

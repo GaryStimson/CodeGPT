@@ -10,7 +10,7 @@ import com.intellij.openapi.ui.Messages;
 import ee.carlrobert.codegpt.actions.ActionType;
 import ee.carlrobert.codegpt.actions.editor.EditorActionsUtil;
 import ee.carlrobert.codegpt.conversations.ConversationService;
-import ee.carlrobert.codegpt.telemetry.TelemetryAction;
+//import ee.carlrobert.codegpt.telemetry.TelemetryAction;
 import ee.carlrobert.codegpt.toolwindow.chat.ChatToolWindowContentManager;
 import org.jetbrains.annotations.NotNull;
 
@@ -46,9 +46,9 @@ public class DeleteAllConversationsAction extends AnAction {
           ConversationService.getInstance().clearAll();
           project.getService(ChatToolWindowContentManager.class).resetAll();
         } finally {
-          TelemetryAction.IDE_ACTION.createActionMessage()
-              .property("action", ActionType.DELETE_ALL_CONVERSATIONS.name())
-              .send();
+//          TelemetryAction.IDE_ACTION.createActionMessage()
+//              .property("action", ActionType.DELETE_ALL_CONVERSATIONS.name())
+//              .send();
         }
       }
       this.onRefresh.run();

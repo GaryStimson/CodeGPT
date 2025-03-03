@@ -57,11 +57,11 @@ class CodeCompletionService {
         eventListener: CompletionEventListener<String>
     ): EventSource =
         when (val selectedService = GeneralSettings.getSelectedService()) {
-            CODEGPT -> CompletionClientProvider.getCodeGPTClient()
-                .getCodeCompletionAsync(buildCodeGPTRequest(infillRequest), eventListener)
+//            CODEGPT -> CompletionClientProvider.getCodeGPTClient()
+//                .getCodeCompletionAsync(buildCodeGPTRequest(infillRequest), eventListener)
 
-            OPENAI -> CompletionClientProvider.getOpenAIClient()
-                .getCompletionAsync(buildOpenAIRequest(infillRequest), eventListener)
+//            OPENAI -> CompletionClientProvider.getOpenAIClient()
+//                .getCompletionAsync(buildOpenAIRequest(infillRequest), eventListener)
 
             CUSTOM_OPENAI -> createFactory(
                 CompletionClientProvider.getDefaultClientBuilder().build()
@@ -74,11 +74,11 @@ class CodeCompletionService {
                 }
             )
 
-            OLLAMA -> CompletionClientProvider.getOllamaClient()
-                .getCompletionAsync(buildOllamaRequest(infillRequest), eventListener)
+//            OLLAMA -> CompletionClientProvider.getOllamaClient()
+//                .getCompletionAsync(buildOllamaRequest(infillRequest), eventListener)
 
-            LLAMA_CPP -> CompletionClientProvider.getLlamaClient()
-                .getChatCompletionAsync(buildLlamaRequest(infillRequest), eventListener)
+//            LLAMA_CPP -> CompletionClientProvider.getLlamaClient()
+//                .getChatCompletionAsync(buildLlamaRequest(infillRequest), eventListener)
 
             else -> throw IllegalArgumentException("Code completion not supported for ${selectedService.name}")
         }

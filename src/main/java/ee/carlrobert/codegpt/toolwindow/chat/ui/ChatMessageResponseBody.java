@@ -35,18 +35,18 @@ import ee.carlrobert.codegpt.events.CodeGPTEvent;
 import ee.carlrobert.codegpt.events.EventDetails;
 import ee.carlrobert.codegpt.events.WebSearchEventDetails;
 import ee.carlrobert.codegpt.settings.GeneralSettingsConfigurable;
-import ee.carlrobert.codegpt.telemetry.TelemetryAction;
+//import ee.carlrobert.codegpt.telemetry.TelemetryAction;
 import ee.carlrobert.codegpt.toolwindow.chat.StreamParser;
 import ee.carlrobert.codegpt.toolwindow.chat.editor.ResponseEditorPanel;
 import ee.carlrobert.codegpt.toolwindow.chat.editor.actions.CopyAction;
 import ee.carlrobert.codegpt.toolwindow.ui.ResponseBodyProgressPanel;
 import ee.carlrobert.codegpt.toolwindow.ui.WebpageList;
-import ee.carlrobert.codegpt.ui.OverlayUtil;
+//import ee.carlrobert.codegpt.ui.OverlayUtil;
 import ee.carlrobert.codegpt.ui.UIUtil;
 import ee.carlrobert.codegpt.util.EditorUtil;
 import ee.carlrobert.codegpt.util.MarkdownUtil;
 import java.awt.BorderLayout;
-import java.awt.event.MouseEvent;
+//import java.awt.event.MouseEvent;
 import java.util.Objects;
 import javax.swing.BoxLayout;
 import javax.swing.DefaultListModel;
@@ -155,9 +155,9 @@ public class ChatMessageResponseBody extends JPanel {
         if (e.getEventType() == ACTIVATED) {
           ShowSettingsUtil.getInstance()
               .showSettingsDialog(project, GeneralSettingsConfigurable.class);
-          TelemetryAction.IDE_ACTION.createActionMessage()
-              .property("action", ActionType.CHANGE_PROVIDER.name())
-              .send();
+//          TelemetryAction.IDE_ACTION.createActionMessage()
+//              .property("action", ActionType.CHANGE_PROVIDER.name())
+//              .send();
         }
       });
       hideCaret();

@@ -11,7 +11,7 @@ import ee.carlrobert.codegpt.conversations.Conversation;
 import ee.carlrobert.codegpt.conversations.ConversationService;
 import ee.carlrobert.codegpt.conversations.message.Message;
 import ee.carlrobert.codegpt.events.CodeGPTEvent;
-import ee.carlrobert.codegpt.telemetry.TelemetryAction;
+//import ee.carlrobert.codegpt.telemetry.TelemetryAction;
 import ee.carlrobert.codegpt.toolwindow.chat.ui.ChatMessageResponseBody;
 import ee.carlrobert.codegpt.toolwindow.chat.ui.textarea.TotalTokensPanel;
 import ee.carlrobert.codegpt.toolwindow.ui.ResponseMessagePanel;
@@ -86,11 +86,11 @@ abstract class ToolWindowCompletionResponseEventListener implements
   public void handleError(ErrorDetails error, Throwable ex) {
     ApplicationManager.getApplication().invokeLater(() -> {
       try {
-        if ("insufficient_quota".equals(error.getCode())) {
-          responseContainer.displayQuotaExceeded();
-        } else {
-          responseContainer.displayError(error.getMessage());
-        }
+//        if ("insufficient_quota".equals(error.getCode())) {
+//          responseContainer.displayQuotaExceeded();
+//        } else {
+//          responseContainer.displayError(error.getMessage());
+//        }
       } finally {
         LOG.error(error.getMessage(), ex);
         responsePanel.enableAllActions(true);
@@ -104,10 +104,10 @@ abstract class ToolWindowCompletionResponseEventListener implements
     ApplicationManager.getApplication().invokeLater(() -> {
       var answer = OverlayUtil.showTokenLimitExceededDialog();
       if (answer == OK) {
-        TelemetryAction.IDE_ACTION.createActionMessage()
-            .property("action", "DISCARD_TOKEN_LIMIT")
-            .property("model", conversation.getModel())
-            .send();
+//        TelemetryAction.IDE_ACTION.createActionMessage()
+//            .property("action", "DISCARD_TOKEN_LIMIT")
+//            .property("model", conversation.getModel())
+//            .send();
 
         conversationService.discardTokenLimits(conversation);
         handleTokensExceededPolicyAccepted();

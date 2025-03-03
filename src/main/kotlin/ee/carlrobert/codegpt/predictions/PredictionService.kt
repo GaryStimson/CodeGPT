@@ -116,16 +116,16 @@ class PredictionService {
             PENDING_PREDICTION_CALL.set(editor, call)
             return client.getPrediction(call)
         } catch (e: CodeGPTException) {
-            OverlayUtil.notify(
-                getDefaultNotification(e.detail, NotificationType.ERROR).apply {
-                    setListener(NotificationListener.UrlOpeningListener(true))
-                })
-
-            service<CodeGPTServiceSettings>().state.codeAssistantEnabled = false
+//            OverlayUtil.notify(
+//                getDefaultNotification(e.detail, NotificationType.ERROR).apply {
+//                    setListener(NotificationListener.UrlOpeningListener(true))
+//                })
+//
+//            service<CodeGPTServiceSettings>().state.codeAssistantEnabled = false
             return null
         } catch (e: Exception) {
             if (e.cause?.message != "Canceled") {
-                throw e
+                //throw e
             }
             return null
         } finally {

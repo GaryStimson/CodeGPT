@@ -6,7 +6,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.DumbAwareAction;
 import ee.carlrobert.codegpt.actions.ActionType;
 import ee.carlrobert.codegpt.actions.editor.EditorActionsUtil;
-import ee.carlrobert.codegpt.telemetry.TelemetryAction;
+//import ee.carlrobert.codegpt.telemetry.TelemetryAction;
 import org.jetbrains.annotations.NotNull;
 
 public class ClearChatWindowAction extends DumbAwareAction {
@@ -24,9 +24,9 @@ public class ClearChatWindowAction extends DumbAwareAction {
     try {
       onActionPerformed.run();
     } finally {
-      TelemetryAction.IDE_ACTION.createActionMessage()
-          .property("action", ActionType.CLEAR_CHAT_WINDOW.name())
-          .send();
+//      TelemetryAction.IDE_ACTION.createActionMessage()
+//          .property("action", ActionType.CLEAR_CHAT_WINDOW.name())
+//          .send();
     }
   }
 

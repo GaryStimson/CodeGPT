@@ -192,7 +192,8 @@ public final class CompletionRequestService {
           .executeOnPooledThread(() -> isRequestAllowed(GeneralSettings.getSelectedService()))
           .get();
     } catch (InterruptedException | ExecutionException e) {
-      throw new RuntimeException(e);
+      //throw new RuntimeException(e);
+      return false;
     }
   }
 
