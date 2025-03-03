@@ -138,6 +138,12 @@ class DebouncedCodeCompletionProvider : DebouncedInlineCompletionProvider() {
     }
 
     override fun isEnabled(event: InlineCompletionEvent): Boolean {
+
+        // allow direct call with code completions disabled
+        if ( event is InlineCompletionEvent.DirectCall ){
+            return true
+        }
+
         val selectedService = GeneralSettings.getSelectedService()
         val codeCompletionsEnabled = when (selectedService) {
             ServiceType.CODEGPT -> service<CodeGPTServiceSettings>().state.codeCompletionSettings.codeCompletionsEnabled
